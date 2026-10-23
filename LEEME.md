@@ -6,7 +6,7 @@ BlockWorld es un juego de construir con bloques para niños de 5 a 8 años. Es u
 
 | Archivo | Para qué sirve |
 | --- | --- |
-| `index.html` y carpeta `assets/` | El juego completo |
+| `index.html` | El juego completo (también funciona abriéndolo con doble clic) |
 | `manifest.webmanifest` | Nombre, ícono, colores y modo pantalla completa de la app |
 | `sw.js` | Guarda el juego en el teléfono para jugar sin conexión |
 | `icons/`, `favicon.png` | Íconos de la app (Android, iPhone y pestaña del navegador) |
@@ -38,7 +38,7 @@ El juego se juega con el teléfono **horizontal**. Si está vertical, aparece un
 
 ## 3. Publicar una actualización
 
-Desde la carpeta del proyecto ejecuta `npm run webapp`: vuelve a compilar el juego y actualiza esta carpeta. Después sube los archivos de nuevo. Antes de compilar, cambia la línea `const VERSION = 'blockworld-v2'` de `public/sw.js` (por ejemplo a `blockworld-v3`) para que los teléfonos renueven la copia guardada.
+Desde la carpeta del proyecto ejecuta `npm run webapp`: vuelve a compilar el juego y actualiza esta carpeta. Después sube los archivos de nuevo. Antes de compilar, cambia la línea `const VERSION = 'blockworld-v3'` de `public/sw.js` (por ejemplo a `blockworld-v4`) para que los teléfonos renueven la copia guardada.
 
 ## Controles
 

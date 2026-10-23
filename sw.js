@@ -1,5 +1,5 @@
 // Service worker: guarda el juego para poder jugar sin internet.
-const VERSION = 'blockworld-v4';
+const VERSION = 'blockworld-v5';
 const CORE = ['./', './index.html', './manifest.webmanifest', './favicon.png',
   './icons/icon-192.png', './icons/icon-512.png', './icons/apple-touch-icon.png'];
 

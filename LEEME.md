@@ -38,7 +38,7 @@ El juego se juega con el teléfono **horizontal**. Si está vertical, aparece un
 
 ## 3. Publicar una actualización
 
-Desde la carpeta del proyecto ejecuta `npm run webapp`: vuelve a compilar el juego y actualiza esta carpeta. Después sube los archivos de nuevo. Antes de compilar, cambia la línea `const VERSION = 'blockworld-v3'` de `public/sw.js` (por ejemplo a `blockworld-v4`) para que los teléfonos renueven la copia guardada.
+Desde la carpeta del proyecto ejecuta `npm run webapp`: vuelve a compilar el juego y actualiza esta carpeta. Después sube los archivos de nuevo. Antes de compilar, cambia la línea `const VERSION = 'blockworld-v5'` de `public/sw.js` (por ejemplo a `blockworld-v6`) para que los teléfonos renueven la copia guardada.
 
 ## Controles
 

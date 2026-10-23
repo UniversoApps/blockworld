@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover" />
+  <meta name="theme-color" content="#4da6ff" />
+  <meta name="description" content="Juego de construir con bloques para niños de 5 a 8 años." />
+  <meta name="mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="apple-mobile-web-app-title" content="BlockWorld" />
+  <link rel="manifest" href="./manifest.webmanifest" />
+  <link rel="icon" type="image/png" href="./favicon.png" />
+  <link rel="apple-touch-icon" href="./icons/apple-touch-icon.png" />
+  <title>BlockWorld</title>
+  <script type="module" crossorigin src="./assets/index-CNqWDO7a.js"></script>
+  <link rel="stylesheet" crossorigin href="./assets/index-Cyu2RMOd.css">
+</head>
+<body>
+  <div id="game"></div>
+
+  <!-- Menú principal -->
+  <section id="menu" class="screen">
+    <h1 class="logo" aria-label="BlockWorld"></h1>
+    <p class="tagline">¡Construye tu mundo de bloques!</p>
+    <div class="menu-buttons">
+      <button id="btn-continue" class="big green hidden">▶️ Seguir jugando</button>
+      <button id="btn-build" class="big blue">🏗️ Construir</button>
+      <button id="btn-adventure" class="big yellow">⭐ Aventuras</button>
+    </div>
+    <div class="menu-small">
+      <button id="btn-sound" class="round" title="Sonido">🔊</button>
+      <button id="btn-voice" class="round" title="Voz">🗣️</button>
+      <button id="btn-parents" class="round" title="Para papás y mamás">👪</button>
+      <button id="btn-install" class="round hidden" title="Instalar">📲</button>
+    </div>
+  </section>
+
+  <!-- Cómo instalar -->
+  <section id="install" class="screen hidden">
+    <div class="panel">
+      <h2>📲 Instalar BlockWorld</h2>
+      <div id="install-ios" class="hidden">
+        <p>En iPhone o iPad (con Safari):</p>
+        <ol>
+          <li>Toca el botón <b>Compartir</b> <span class="key">⬆️</span> de abajo o de arriba.</li>
+          <li>Elige <b>Añadir a pantalla de inicio</b> <span class="key">➕</span>.</li>
+          <li>Toca <b>Añadir</b>. ¡Ya tienes BlockWorld con los demás juegos!</li>
+        </ol>
+      </div>
+      <div id="install-android" class="hidden">
+        <p>En Android (con Chrome):</p>
+        <ol>
+          <li>Toca el menú <span class="key">⋮</span> de arriba a la derecha.</li>
+          <li>Elige <b>Instalar aplicación</b> o <b>Añadir a pantalla de inicio</b>.</li>
+        </ol>
+      </div>
+      <p class="hint">Una vez instalado se puede jugar sin internet.</p>
+      <button class="big blue" data-close="install">¡Entendido!</button>
+    </div>
+  </section>
+
+  <!-- Aviso para girar el móvil -->
+  <div id="rotate">
+    <div class="rotate-icon">📱</div>
+    <p>¡Gira el móvil para jugar!</p>
+  </div>
+
+  <!-- Elegir mundo -->
+  <section id="themes" class="screen hidden">
+    <h2>¿Qué mundo quieres?</h2>
+    <div id="theme-list" class="cards"></div>
+    <button class="back round" data-close="themes">⬅️</button>
+  </section>
+
+  <!-- Información para adultos -->
+  <section id="parents" class="screen hidden">
+    <div class="panel">
+      <h2>👪 Para papás y mamás</h2>
+      <ul>
+        <li>BlockWorld es un juego de construir para niños de 5 a 8 años.</li>
+        <li>No tiene anuncios, compras, chat ni conexión a internet.</li>
+        <li>No hay monstruos ni peligros: nadie pierde nunca.</li>
+        <li>Los mundos se guardan solos en el dispositivo.</li>
+        <li>Una voz lee las misiones para quien aún está aprendiendo a leer.</li>
+      </ul>
+      <p class="hint">Controles: dedo izquierdo para caminar, dedo derecho para mirar, toca un sitio para poner o quitar bloques.</p>
+      <button class="big blue" data-close="parents">¡Entendido!</button>
+    </div>
+  </section>
+
+  <!-- Interfaz de juego -->
+  <section id="hud" class="hidden">
+    <button id="btn-pause" class="round corner-tl" title="Pausa">⏸️</button>
+    <div id="mission" class="hidden">
+      <span id="mission-icon"></span>
+      <span id="mission-text"></span>
+      <span id="mission-progress"></span>
+      <button id="btn-repeat" class="round small" title="Repetir">🔊</button>
+    </div>
+    <div id="stickers" class="corner-tr hidden">🏅 <span>0</span></div>
+
+    <div id="stick"><div id="knob"></div></div>
+
+    <div id="right-buttons">
+      <button id="btn-mode" class="action place">🧱<small>PONER</small></button>
+      <div class="row">
+        <button id="btn-fly" class="round mid" title="Volar">🪽<small>VOLAR</small></button>
+        <button id="btn-jump" class="round mid" title="Saltar">⬆️<small>SALTAR</small></button>
+      </div>
+      <div id="fly-buttons" class="row hidden">
+        <button id="btn-down" class="round mid">⬇️<small>BAJAR</small></button>
+        <button id="btn-up" class="round mid">⏫<small>SUBIR</small></button>
+      </div>
+    </div>
+
+    <div id="hotbar"></div>
+    <div id="toast"></div>
+  </section>
+
+  <!-- Mochila de bloques -->
+  <section id="bag" class="screen hidden">
+    <div class="panel wide">
+      <h2>🎒 Mochila de bloques</h2>
+      <div id="bag-grid"></div>
+      <button class="big green" data-close="bag">✔️ Listo</button>
+    </div>
+  </section>
+
+  <!-- Pausa -->
+  <section id="pause" class="screen hidden">
+    <div class="panel">
+      <h2>⏸️ Pausa</h2>
+      <button id="btn-resume" class="big green">▶️ Seguir</button>
+      <button id="btn-respawn" class="big blue">🏡 Volver al inicio</button>
+      <button id="btn-home" class="big yellow">💾 Guardar y salir</button>
+      <div class="menu-small">
+        <button id="btn-sound2" class="round">🔊</button>
+        <button id="btn-voice2" class="round">🗣️</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Celebración -->
+  <section id="celebrate" class="screen hidden">
+    <div class="panel">
+      <div id="celebrate-emoji">🏅</div>
+      <h2 id="celebrate-title">¡Muy bien!</h2>
+      <p id="celebrate-text"></p>
+      <button id="btn-next" class="big green">¡Vamos! ➡️</button>
+    </div>
+  </section>
+
+  <div id="confetti"></div>
+</body>
+</html>
